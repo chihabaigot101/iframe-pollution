@@ -3,8 +3,9 @@ import './App.css'
 
 function App() {
     window.addEventListener('message', event => {
+        if (event.origin !== window.domain)
+            return;
         console.log(event)
-        // todo: check origin
     });
 
     return (
